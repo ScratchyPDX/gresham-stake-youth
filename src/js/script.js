@@ -24,6 +24,9 @@ const month = [
 
 const date = new Date();
 
+const documentURL = import.meta.env.VITE_DOWNLOAD_URL;
+alert(documentURL);
+
 // set footer dates
 document.getElementById("today-date").textContent = `${weekday[date.getDay()]}, ${date.getDate()} ${month[date.getMonth()]} ${date.getFullYear()}`;
 
