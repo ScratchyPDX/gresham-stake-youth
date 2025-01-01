@@ -24,8 +24,22 @@ const month = [
 
 const date = new Date();
 
-const documentURL = import.meta.env.VITE_DOWNLOAD_URL;
-alert(documentURL);
+const VITE_YM_CAMP_BISHOPS_INFO_DOCUMENT_URL = import.meta.env.VITE_YM_CAMP_BISHOPS_INFO_DOCUMENT_URL;
+const VITE_YM_CAMP_PACKING_LIST_DOCUMENT_URL = import.meta.env.VITE_YM_CAMP_PACKING_LIST_DOCUMENT_URL;
+const VITE_YM_CAMP_PARENTS_INFO_DOCUMENT_URL = import.meta.env.VITE_YM_CAMP_PARENTS_INFO_DOCUMENT_URL;
+const VITE_YOUTH_EVENTS_AND_DANCES_DOCUMENT_URL = import.meta.env.VITE_YOUTH_EVENTS_AND_DANCES_DOCUMENT_URL;
+const VITE_YW_CAMP_GENERAL_INFO_DOCUMENT_URL = import.meta.env.VITE_YW_CAMP_GENERAL_INFO_DOCUMENT_URL;
+const VITE_YW_CAMP_PACKING_LIST_DOCUMENT_URL = import.meta.env.VITE_YW_CAMP_PACKING_LIST_DOCUMENT_URL;
+
+function downloadFile(url, filename) {
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  link.target = "_blank"; // Open in a new tab to force download
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 // set footer dates
 document.getElementById("today-date").textContent = `${weekday[date.getDay()]}, ${date.getDate()} ${month[date.getMonth()]} ${date.getFullYear()}`;
@@ -48,36 +62,36 @@ const downloadBishopricYmCampRepresentativePdf = document.getElementById("downlo
 
 if(downloadCalendarPdf != null) {
   downloadCalendarPdf.addEventListener("click", () =>  {
-    alert("You are about to download the calendar PDF");
+    downloadFile(VITE_YOUTH_EVENTS_AND_DANCES_DOCUMENT_URL, "youth-events-and-dances.pdf");
   });
 }
  
 if(downloadYwGeneralCampInfoPdf != null) {
   downloadYwGeneralCampInfoPdf.addEventListener("click", () =>  {
-    alert("You are about to download the YM Camp General Info PDF");
+    downloadFile(VITE_YW_CAMP_GENERAL_INFO_DOCUMENT_URL, "yw-camp-general-info.pdf");
   });
 }
 
 if(downloadYwPackingListPdf != null) {
   downloadYwPackingListPdf.addEventListener("click", () =>  {
-    alert("You are about to download the YM Camp Packing List PDF");
+    downloadFile(VITE_YW_CAMP_PACKING_LIST_DOCUMENT_URL, "yw-camp-packing-list.pdf");
   });
 }
 
 if(downloadGeneralYmCampInfoForParentsPdf != null) {
   downloadGeneralYmCampInfoForParentsPdf.addEventListener("click", () =>  {
-    alert("You are about to download the YM Camp Info for Parents PDF");
+    downloadFile(VITE_YM_CAMP_PARENTS_INFO_DOCUMENT_URL, "ym-camp-parents-info.pdf");
   });
 }
 
 if(downloadYmCampPackingListPdf != null) {
   downloadYmCampPackingListPdf.addEventListener("click", () =>  {
-    alert("You are about to download the YM Camp Packing List PDF");
+    downloadFile(VITE_YM_CAMP_PACKING_LIST_DOCUMENT_URL, "ym-camp-packing-list.pdf");
   });
 }
 
 if(downloadBishopricYmCampRepresentativePdf != null) {
   downloadBishopricYmCampRepresentativePdf.addEventListener("click", () =>  {
-    alert("You are about to download the Bishopric and YM Camp Info PDF");
+    downloadFile(VITE_YM_CAMP_BISHOPS_INFO_DOCUMENT_URL, "ym-camp-bishops-info.pdf");
   });
 }
