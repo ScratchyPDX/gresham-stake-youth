@@ -22,6 +22,19 @@ body {
 .box-shadow {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
 }
+.centered-block {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+}
+.centered-block .heading2 {
+  margin: 5px 0;
+  padding: .5rem;
+  text-align: left;
+}
 footer p {
   padding: 0.5rem;
   display: flex;
