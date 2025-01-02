@@ -2,6 +2,9 @@
   article:nth-child(3) {
     grid-column: span 2;
   }
+  .centered-block {
+    width: 50%;
+  }
   #event {
     grid-column: 1/3;
     grid-row: 5/6;

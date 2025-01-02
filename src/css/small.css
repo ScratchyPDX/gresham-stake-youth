@@ -25,10 +25,8 @@ body {
 .centered-block {
   display: flex;
   flex-direction: column;
-  align-items: left;
   justify-content: center;
   text-align: center;
-  width: 50%;
 }
 .centered-block .heading2 {
   margin: 5px 0;
